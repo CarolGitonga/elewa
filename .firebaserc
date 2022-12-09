@@ -1,5 +1,15 @@
 {
   "projects": {
-    "default": "ele-convl-manager"
-  }
+    "default": "ele-convl-manager-7cd0a"
+  },
+  "targets": {
+    "elewa-conv-learning-prod": {
+      "hosting": {
+        "convl-manager": [
+          "elewa-conv-learning-prod"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
