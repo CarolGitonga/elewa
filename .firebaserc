@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "ele-convl-manager-7cd0a"
+    "default": "elewa-conv-learning-prod"
   },
   "targets": {
     "elewa-conv-learning-prod": {
