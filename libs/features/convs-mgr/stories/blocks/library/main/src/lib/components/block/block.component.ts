@@ -1,4 +1,5 @@
-import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, TemplateRef} from '@angular/core';
+import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 import { BrowserJsPlumbInstance } from '@jsplumb/browser-ui';
@@ -33,6 +34,7 @@ import { _CreateJumpBlockForm } from '../../model/jump-block-form.model';
   styleUrls: ['./block.component.scss']
 })
 export class BlockComponent implements OnInit {
+  sidebarPortal: TemplatePortal;
   @Input() id: string;
   @Input() block: StoryBlock;
   @Input() blocksGroup: FormArray;
@@ -59,14 +61,17 @@ export class BlockComponent implements OnInit {
 
   iconClass = ''
   blockTitle = ''
+  sidebarTemplate: TemplateRef<any>;
 
   constructor(private _el: ElementRef,
               private _fb: FormBuilder,
-              private _logger: Logger
+              private _logger: Logger,
+              
   ) { }
 
   ngOnInit(): void {
     this.type = this.block.type;
+    this.sidebarPortal = new TemplatePortal(this.sidebarTemplate, null!);
 
     this.iconClass = this.getBlockIconAndTitle(this.type).icon;
     this.blockTitle = this.getBlockIconAndTitle(this.type).title;

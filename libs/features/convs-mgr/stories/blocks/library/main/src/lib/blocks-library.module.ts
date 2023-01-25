@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PortalModule } from '@angular/cdk/portal';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
   FlexLayoutModule,
@@ -39,6 +40,7 @@ import { BlockComponent } from './components/block/block.component';
     MaterialDesignModule,
     FlexLayoutModule,
     MaterialBricksModule,
+    PortalModule,
 
     ReactiveFormsModule,
 
